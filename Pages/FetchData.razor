@@ -1,0 +1,62 @@
+﻿@page "/fetchdata"
+@inject HttpClient Http
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (forecast == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Windspeed</th>
+                <th>Wind Direction</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.longitude</td>
+                    <td>@forecast.latitude</td>
+                    <td>@forecast.temperature</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.windspeed</td>
+                    <td>@forecast.winddirection</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+            
+        </tbody>
+    </table>
+}
+
+@code {
+    private WeatherForecast[]? forecasts;
+    private WeatherForecast? forecast;
+    protected override async Task OnInitializedAsync()
+    {
+        string localJsonFile = "/sample-data/weather.json";
+        string requestUri = "https://api.open-meteo.com/v1/forecast?latitude=46.77&longitude=23.60&hourly=temperature_2m&daily=weathercode,temperature_2m_max,temperature_2m_min&current_weather=true&timezone=auto";
+        string json = await Http.GetStringAsync(requestUri);
+        forecast = JsonSerializer.Deserialize<WeatherForecast>(json);
+        
+        //hourlyForecast = JsonSerializer.Deserialize<HourlyForecast>(json);
+    }
+
+
+
+    
+}
