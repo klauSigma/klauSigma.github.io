@@ -1,7 +1,7 @@
 ﻿@page "/fetchdata"
 @inject HttpClient Http
 
-<PageTitle>Weather forecast</PageTitle>
+<PageTitle>CSForLearning|Weather forecast</PageTitle>
 
 <h1>Weather forecast</h1>
 
@@ -44,11 +44,11 @@ else
 }
 
 @code {
-    private WeatherForecast[]? forecasts;
+    
     private WeatherForecast? forecast;
     protected override async Task OnInitializedAsync()
     {
-        string localJsonFile = "/sample-data/weather.json";
+       
         string requestUri = "https://api.open-meteo.com/v1/forecast?latitude=46.77&longitude=23.60&hourly=temperature_2m&daily=weathercode,temperature_2m_max,temperature_2m_min&current_weather=true&timezone=auto";
         string json = await Http.GetStringAsync(requestUri);
         forecast = JsonSerializer.Deserialize<WeatherForecast>(json);

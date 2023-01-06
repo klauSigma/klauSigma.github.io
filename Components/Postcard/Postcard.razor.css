@@ -1,0 +1,11 @@
+﻿.postcard-icon{
+	width:2rem
+}
+.postcard-cat-text {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.postcard-cat{
+	position:relative;
+}

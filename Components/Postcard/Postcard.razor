@@ -1,0 +1,99 @@
+﻿
+<div class="card container" style="max-width:60rem; margin:2rem">
+    <div class="row" style="margin:2.5rem;">
+        <div id="column_1" class="col" style="position:relative;">
+           
+            <div id="rowWithTitle" >
+                @Title
+            </div>
+            <div id="rowWithDescription" >
+                This is the row with the description
+                This is the row with the description
+                This is the row with the description
+                This is the row with the description
+                This is the row with the description
+            </div>
+            <div id="rowWithCategories" class="row" style="margin-bottom:0.5rem;">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="postcard-icon" src="/dog.png" />
+                        </div>
+                        <div class="col-9 postcard-cat">
+                            <p class="postcard-cat-text"> Cattegory attribute</p>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-3">
+                            <img class="postcard-icon" src="/cat.png" />
+                        </div>
+                        <div class="col-9 postcard-cat">
+                            <p class="postcard-cat-text"> Cattegory attribute</p>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-3">
+                            <img src="/car_park_garage.png" class="postcard-icon" />
+                        </div>
+                        <div class="col-9 postcard-cat">
+                            <p class="postcard-cat-text"> Cattegory attribute</p>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-3 " >
+                            <img src=" /placeholder.png" class="postcard-icon" />
+                        </div>
+                        <div class="col-9 postcard-cat">
+                            <p class ="postcard-cat-text"> Cattegory attribute</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col-3 " >
+                            <img src=" /placeholder.png" class="postcard-icon" />
+                        </div>
+                        <div class="col-9 postcard-cat">
+                            <p class="postcard-cat-text"> Cattegory attribute</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3" >
+                            <img src=" /placeholder.png" class="postcard-icon" />
+                        </div>
+                        <div class="col-9 postcard-cat">
+                            <p class="postcard-cat-text"> Cattegory attribute</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3" >
+                            <img src=" /placeholder.png" class="postcard-icon" />
+                        </div>
+                        <div class="col-9 postcard-cat">
+                            <p class="postcard-cat-text"> Cattegory attribute</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <img src=" /placeholder.png" class="postcard-icon" />
+                        </div>
+                        <div class="col-9 postcard-cat">
+                            <p class="postcard-cat-text"> Cattegory attribute</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div id="column_2" class="col-1" style="width:18rem; ">
+                <img src=" ~/icon-192.png" class="card-img" />
+        </div>
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public string Title { get; set; }
+   
+}
